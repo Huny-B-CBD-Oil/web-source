@@ -3,4 +3,9 @@
 	url = https://github.com/davsk/davsk-hugo-theme
 [submodule "public"]
 	path = public
-	url = https://github.com/davsk/web-public
+	url = git@github.com:Huny-B-CBD-Oil/Huny-B-CBD-Oil.github.io.git
+	branch = master
+[submodule "content"]
+	path = content
+	url = git@github.com:Huny-B-CBD-Oil/web-content
+	branch = master
