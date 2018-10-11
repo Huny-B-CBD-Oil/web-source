@@ -7,5 +7,5 @@
 	branch = master
 [submodule "content"]
 	path = content
-	url = git@github.com:Huny-B-CBD-Oil/web-content
+	url = git@github.com:Huny-B-CBD-Oil/web-content.git
 	branch = master
