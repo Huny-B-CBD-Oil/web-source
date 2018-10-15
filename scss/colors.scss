@@ -1,0 +1,72 @@
+/*
+colors.scss
+
+copyright © 2018 Davsk℠. All Rights Reserved.
+Licensed to Huny-B CBD Oil Ltd Co 
+for Commercial Use without modification.
+
+by David Skinner
+for Huny-B CBD Oil Ltd Co
+on October 15, 2018
+
+Davsk-Hugo-Theme Colors for Huny-B CBD Oil™ brand.
+
+*/
+
+/*
+Primary color as selected by Belinda Gates, Pres.
+Addition colors selected by calculating spectrum shift of 20° Analogous from primary and 60° from primary to green, or 45° from compound rebbeccaPurple to complementary blue which is 182° from primary  to compound cyan, or standard error red.
+*/
+var PrimaryColor = #e1af33;
+var PrimaryDarkColor = #ab8000;
+var PrimaryLightColor = #ffe165;
+var PrimaryText = black;
+
+var ErrorColor = #B00020; // Error Red
+var ErrorColorText = White;
+var ErrorDark Dark = #790000; // Shade of Red
+var ErrorDarkText = White;
+var ErrorLight = #e94948; // Carmine Pink
+var ErrorLightText = Black;
+
+var BlackLabelColor = #663399; // RebeccaPurple
+var BlackLableText = White;
+var BlackLabelDark = #36036a; // DeepPurple600
+var BlackLabelDarkText = White;
+var BlackLabelLight = #9760ca; // DeepPurple400
+var BlackLabelLightText = Black;
+
+var HealthColor = #e17533;
+var HealthColorText = black;
+var HealthDark = #a94700;
+var HealthDarkText = white;
+var HealthLight = #ffa561;
+var HealthLightText = black;
+
+var IngredientsColor = #d8e133;
+var IngredientsDark = #a3af00;
+var Ingredientslight = #ffff6a;
+var IngredientsText = black;
+
+var ProductColor = #64e133;
+var productDark = #1fae00;
+var ProductLight = #9cff69;
+var ProductText = black;
+
+var InfoColor = #339999;
+var InfoDark = #006a6b;
+var InfoLight = #6acaca;
+var InfoColorText = black;
+var InfoDarkText = white;
+var InfoLightText = black;
+
+var LegalColor = #334d99;
+var LegalDark = #00266a;
+var LegalLight = #6778ca;
+var LegalColorText = white;
+var LegalDarkText = white;
+var LegalLightText = black;
+
+var HtmlGrey = #6778ca;
+.
+
