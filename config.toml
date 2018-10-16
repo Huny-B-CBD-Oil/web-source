@@ -28,10 +28,20 @@ copyright = "Huny-B CBD-Oil&#8480"            # default: author.name ↓        
   identifier = "home"
   url = "/"
 [[menu.main]]
-  name = "Deals"
+  name = "Blog"
   weight = 20
   identifier = "blog"
   url = "/blog/"
+[[menu.main]]
+  name = "Products"
+  weight = 50
+  identifier = "products"
+  url = "/categories/products"
+[[menu.main]]
+  name = "Ingredients"
+  weight = 52
+  identifier = "ingredients"
+  url = "/catagories/ingredients/"
 [[menu.main]]
   name = "Ingredients"
   weight = 50
