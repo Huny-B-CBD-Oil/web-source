@@ -9,3 +9,7 @@
 	path = content
 	url = git@github.com:Huny-B-CBD-Oil/web-content.git
 	branch = master
+[submodule "themes/hugo-theme-w3css-basic"]
+	path = themes/hugo-theme-w3css-basic
+	url = git@github.com:davsk/hugo-theme-w3css-basic.git
+	branch = master
