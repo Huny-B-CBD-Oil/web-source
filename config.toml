@@ -1,185 +1,914 @@
-#baseURL = "https://Huny-B.CBD-Oil.App/"
-baseURL = "http://localhost:1313/"
-languageCode = "en"
-defaultContentLanguage = "en-US"                             # en / zh-cn / ... (This field determines which i18n file to use)
-title = "Huny-B CBD-Oil - Educate Yourself!"
-enableRobotsTXT = true
-enableEmoji = true
-theme = "davsk-hugo-theme"
+# https://gohugo.io/getting-started/configuration/#toml-configuration
 
-preserveTaxonomyNames = true
-hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否包含 中文\日文\韩文
-paginate = 5                                              # 首页每页显示的文章数
-disqusShortname = ""      # disqus_shortname
-googleAnalytics = ""      # UA-XXXXXXXX-X
-copyright = "Huny-B CBD-Oil&#8480"            # default: author.name ↓        # 默认为下面配置的author.name ↓
+# ##################################################
+# Hugo-defined variables
+baseURL       = "https://example.com"
 
-[author]                  # essential                     # 必需
-  name = "Clint Mathis"
+title         = "hugo-theme-w3css-basic exampleSite"
+theme         = "hugo-theme-w3css-basic"
+languageCode  = "en-us"
+#languageCode  = "de-ch"
 
-[sitemap]                 # essential                     # 必需
-  changefreq = "weekly"
-  priority = 0.5
-  filename = "sitemap.xml"
+# Site language. Available translations in the theme's `/i18n` directory.
+defaultContentLanguage = "en"
 
-[[menu.main]]             # config your menu              # 配置目录
-  name = "Home"
-  weight = 10
-  identifier = "home"
-  url = "/"
-[[menu.main]]
-  name = "Blog"
-  weight = 20
-  identifier = "blog"
-  url = "/blog/"
-[[menu.main]]
-  name = "Products"
-  weight = 50
-  identifier = "products"
-  url = "/categories/products"
-[[menu.main]]
-  name = "Ingredients"
-  weight = 52
-  identifier = "ingredients"
-  url = "/catagories/ingredients/"
-[[menu.main]]
-  name = "Ingredients"
-  weight = 50
-  identifier = "tags"
-  url = "/tags/"
-[[menu.main]]
-  name = "Help"
-  weight = 90
-  identifier = "help"
-  url = "/help/"
-[[menu.main]]
-  name = "Products"
-  weight = 30
-  identifier = "categories"
-  url = "/categories/"
-[[menu.main]]
-  name = "Health Concerns"
-  weight = 40
-  identifier = "events"
-  url = "/events/"
+#disableFastRender=true
 
+# Enable Emoji emoticons support for page content; see emoji-cheat-sheet.com
+enableEmoji   = true
+
+# the length of text to show in a .Summary
+summaryLength = 70
+
+# Pagination (3,6,9,12, ...)
+paginate =  6
+
+# Enable comments by entering your Disqus shortname
+disqusShortname = "it-gro-github-io-hugo-theme-w3css-basic-github-io"
+
+# https://gohugo.io/content-management/syntax-highlighting/
+pygmentsUseClassic            = false
+pygmentsCodeFences            = true
+pygmentsCodeFencesGuessSyntax = true
+# https://help.farbox.com/pygments.html
+# https://github.com/alecthomas/chroma
+# hugo gen chromastyles --style=autumn        >  syntax.autumn.css
+# ...
+pygmentsUseClasses            = true
+# => static/css/syntax/syntax/syntax.*.css
+# copy one of them to
+# static/css/syntax/syntax.css
+# alternative (if shortcodes/csc*.html are not used):
+# set pygmentsUseClassic to false on choose one of the following:
+#pygmentsStyle = "autumn"
+#pygmentsStyle = "borland"
+#pygmentsStyle = "bw"
+#pygmentsStyle = "colorful"
+#pygmentsStyle = "default"
+#pygmentsStyle = "emacs"
+#pygmentsStyle = "friendly"
+#pygmentsStyle = "fruity"
+#pygmentsStyle = "manni"
+#pygmentsStyle = "monokai"
+#pygmentsStyle = "murphy"
+#pygmentsStyle = "native"
+#pygmentsStyle = "pastie"
+#pygmentsStyle = "perldoc"
+#pygmentsStyle = "rrt"
+#pygmentsStyle = "tango"
+#pygmentsStyle = "trac"
+#pygmentsStyle = "vim"
+#pygmentsStyle = "vs"
+
+
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = "UA-113314068-2"
+
+
+# RSS Feed
+# Do not build RSS files
+disableRSS = false
+# maximum number of items in the RSS feed
+rssLimit   = 10
+
+[outputs]
+home = [ "HTML", "RSS" ]
+section = [ "HTML", "RSS"]
+
+[imaging]
+# https://gohugo.io/content-management/image-processing/
+# Default resample filter used for resizing. Default is Box,
+# a simple and fast averaging filter appropriate for downscaling.
+# See https://github.com/disintegration/imaging
+resampleFilter = "box"
+
+# Defatult JPEG quality setting. Default is 75.
+quality = 75
+
+# Anchor used when cropping pictures.
+# Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
+# Smart Cropping is content aware and tries to find the best crop for each image.
+# Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+anchor = "smart"
+
+
+# ##################################################
+# Theme-defined configuration
+
+# ##################################################
+# hugo sections
+
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+
+[Permalinks]
+  blog = "/blog/:year/:month/:day/:filename/"
+  # blog = "/blog/:year/:month/:title/"
+
+
+# ##################################################
+# Main menu
+[menu]
+
+# provide translations in i18n/*.yaml
+[[menu.main]]
+  weight = 1
+  name   = "Home"
+  url    = "/index.html"
+  pre    = "fas fa-home"
+
+[[menu.main]]
+  weight = 2
+  name   = "Contact"
+  url    = "/contact"
+  pre    = "far fa-address-card"
+
+[[menu.main]]
+  weight = 3
+  name   = "Pages"
+  url    = "/pages"
+  pre    = "fas fa-list"
+
+# demo submenu
+[[menu.main]]
+  weight = 4
+  name   = "Theme"
+  pre    = "fas fa-info-circle"
+  identifier = "theme"
+
+[[menu.main]]
+  weight = 1
+  name   = "About"
+  #url    = "/categories/this-theme/"
+  url    = "/pages/hugo-theme-w3css-basic/"
+  pre    = "fas fa-info fa-fw"
+  parent = "theme"
+
+[[menu.main]]
+  weight = 2
+  name   = "Images"
+  url    = "/pages/hugo-theme-w3css-basic/images-taken-from/"
+  pre    = "far fa-images fa-fw"
+  parent = "theme"
+
+[[menu.main]]
+  weight = 3
+  name   = "Showcase"
+  url    = "/pages/showcase/"
+  pre    = "fas fa-eye fa-fw"
+  parent = "theme"
+
+# end submenu
+
+[[menu.main]]
+  weight = 5
+  name   = "Blog"
+  url    = "/blog"
+  pre    = "fas fa-rss"
+
+[[menu.main]]
+  weight = 6
+  name   = "FAQ"
+  url    = "/faq"
+  pre    = "far fa-question-circle"
+
+
+# right aligned
+[[menu.topbar]]
+  weight   = 1
+  name     = "GitHub"
+  url      = "https://github.com/it-gro/hugo-theme-w3css-basic"
+  pre      = "fab fa-github"
+
+[[menu.topbar]]
+  weight   = 2
+  name     = "GitLab"
+  url      = "https://gitlab.com/it-gro"
+  pre      = "fab fa-gitlab"
+
+#[[menu.topbar]]
+#  weight   = 3
+#  name     = "Facebook"
+#  url      = "http://facebook.com"
+#  pre      = "fab fa-facebook"
+
+#[[menu.topbar]]
+#  weight   = 4
+#  name     = "Twitter"
+#  url      = "http://twitter.com"
+#  pre      = "fab fa-twitter"
+
+[[menu.topbar]]
+  weight   = 5
+  name     = "Email"
+  url      = "#address"
+# url      = "mailto:info@example.com"
+  pre      = "fas fa-envelope"
+
+[[menu.topbar]]
+  weight   = 6
+  name     = "Search"
+  url      = "/search"
+  pre      = "fas fa-search"
+
+
+# ##################################################
+# theme-defined params
 [params]
-  version = "3.x"           # Used to give a friendly message when you have an incompatible update
-  debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
 
-  since = "2018"            # Site creation time          # 站点建立时间
+  # meta data
+  # ##############################
 
-  # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  logoTitle = "Huny-B CBD-Oil&#8480"        # default: the title value    # 默认值: 上面设置的title值
-  keywords = ["CBD Oil", "Hemp Oil"]
-  description = "Huny-B CBD-Oil&#8480 educational sitelinks to research and products."
+  # used in layouts/partials/head.meta.html
+  authorName                        = "anonymous"
+  defaultKeywords                   = ["foo", "bar"]
+  defaultDescription                = "example site created with hugo using theme hugo-theme-w3css-basic"
+  truncateSummaryForMetaDescription = 120
 
-  # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目，建议修改为一个较大的值
-  archivePaginate = 5
+  # multiple lines in toml
+  # https://github.com/toml-lang/toml#user-content-string
 
-  # The date format to use; for a list of valid formats, see https://gohugo.io/functions/format/
-  dateFormatToUse = "Mon, Jan 02 2006 15:04:05 CDT"
+  # used in layouts/partials/footer.html
+  # uses markdownify
+  aboutUs   = '''
+Vel illum **dolore** eu
 
-  # show word count and read time ?                       # 是否显示字数统计与阅读时间
-  moreMeta = false
+  * feugiat nulla
+  * facilisis at vero.
 
-  # 一些全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能，在 archetypes/default.md 查看更多信息。
-  # Some global options, you can also close or open something in front matter for a single post, see more information from `archetypes/default.md`.
-  toc = true                                                                            # 是否开启目录
-  autoCollapseToc = false   # Auto expand and collapse toc                              # 目录自动展开/折叠
-  fancybox = true           # see https://github.com/fancyapps/fancybox                 # 是否启用fancybox（图片可点击）
-  mathjax = false           # see https://www.mathjax.org/                              # 是否使用mathjax（数学公式）
-  mathjaxEnableSingleDollar = false                                                     # 是否使用 $...$ 即可進行inline latex渲染
-  mathjaxEnableAutoNumber = false                                                       # 是否使用公式自动编号
+Nam vestibulum accumsan nisl.
 
-  postMetaInFooter = true   # contain author, lastMod, markdown link, license           # 包含作者，上次修改时间，markdown链接，许可信息
-  linkToMarkDown = false    # Only effective when hugo will output .md files.           # 链接到markdown原始文件（仅当允许hugo生成markdown文件时有效）
-  contentCopyright = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Huny-B CBD-Oil - Educate Yourself!</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://Huny-B.CBD-Oil.App" property="cc:attributionName" rel="cc:attributionURL">Clint Mathis</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.'
+              '''
 
-  changyanAppid = ""        # Changyan app id             # 畅言
-  changyanAppkey = ""       # Changyan app key
-  livereUID = ""            # LiveRe UID                  # 来必力
-  baidu_push = false        # baidu push                  # 百度
-  baidu_analytics = ""      # Baidu Analytics
-  baidu_verification = ""   # Baidu Verification
-  google_verification = ""  # Google_Verification         # 谷歌
+  address   = '''
+**nobis eleifend**          
+**Soluta nobis eleifend**   
+illum dolore eu feugiat     
+3612 Steffisburg            
+consectetuer adipiscing     
 
-  # Link custom CSS and JS assets
-  #   (relative to /static/css and /static/js respectively)
-  customCSS = []
-  customJS = []
+**Switzerland**
+              '''
+  footerContactButton = "contact/index.md"
 
-  [params.publicCDN]        # load these files from public cdn                          # 启用公共CDN，需自行定义
-    enable = false
-    jquery = '<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>'
-    slideout = '<script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>'
-    fancyboxJs = '<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>'
-    fancyboxCss = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">'
-    gitmentJS = '<script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>'
-    gitmentCSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">'
-    gitalkJS = '<script src="https://cdn.jsdelivr.net/npm/gitalk@1.2.2/dist/gitalk.min.js" integrity="sha256-DcjhdbufsHMHflFjZtKNFnPKOAL2ybOxGcPOR4MtnJg=" crossorigin="anonymous"></script>'
-    gitalkCSS = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.2.2/dist/gitalk.css" integrity="sha256-rJVe5uyYRXdLM+Kkoj7JtN+9qI0bZTxkYTaNWODpg7U=" crossorigin="anonymous">'
+  # used in layouts/partials/footer.bottom.html
+  bottomLeft  = "Copyright (c) 2018, *lobortis nisl* ut aliquip ex ea commodo consequat"
+  bottomRight = 'created with [Hugo](https://gohugo.io) '
 
-  [params.gitment]          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
-    owner = ""              # Your GitHub ID
-    repo = ""               # The repo to store comments
-    clientId = ""           # Your client ID
-    clientSecret = ""       # Your client secret
 
-  [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
-    owner = ""              # Your GitHub ID
-    repo = ""               # The repo to store comments
-    clientId = "07dda738c7d0503eb250"           # Your client ID
-    clientSecret = ""       # Your client secret
+  # colors
+  # ##############################
 
-  [params.flowchartDiagrams]# see https://blog.olowolo.com/example-site/post/js-flowchart-diagrams/
-    enable = false
-    options = ""
+  # used in layouts/partials/head.stylesheets.html
+  # https://www.w3schools.com/w3css/w3css_color_themes.asp
+  # https://www.w3schools.com/w3css/w3css_color_generator.asp
+  # Monochromatic Color Schemes
+  # set W3.CSS color theme (choose one)
+  #w3cssColorTheme = "/css/w3-theme-custom.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-amber.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-black.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue-grey.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-blue.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-brown.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-cyan.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-dark-grey.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-orange.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-deep-purple.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-green.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-grey.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-indigo.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-khaki.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-blue.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-light-green.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-lime.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-orange.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-pink.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-purple.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-red.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-teal.css"
+  #w3cssColorTheme = "/vendor/w3css/4/w3-theme-yellow.css"
 
-  [params.sequenceDiagrams] # see https://blog.olowolo.com/example-site/post/js-sequence-diagrams/
-    enable = false
-    options = ""            # default: "{theme: 'simple'}"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2006-sand-dollar.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2007-chili-pepper.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2008-blue-izis.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2009-mimosa.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2010-turquise.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2011-honeysucle.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2012-tangerine-tango.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2013-emerald.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2014-radiand-orchid.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2015-marsala.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-airy-blue.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-aurora-red.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-bodacious.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-buttercup.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-duster-cedar.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-fiesta.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-green-flash.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-iced-coffe.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lilac-grey.css"
+  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-limpet-shell.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-lush-medow.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-peach-echo.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-potters-clay.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-riverside.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-rose-quarts.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-serenity.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-sharkskin.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-snorkel-blue.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-spicy-mustard.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-warm-taupe.css"
 
-  [params.busuanzi]         # count web traffic by busuanzi                             # 是否使用不蒜子统计站点访问量
-    enable = false
-    siteUV = true
-    sitePV = true
-    pagePV = true
+  # used in layouts/partials/*.html
+  # used in layouts/blog/*.html
+  # used in layouts/default/*.html
+  # used in layouts/pages/*.html
+  # {{ default `w3-theme-l3` ($.Site.Param `color404Container`)}}
+  # set the actual color (one of the monochromatic color scheme)
+  #
+  # layouts/partials/header.marquee.html
+  colorHeaderMarquee                    = "w3-theme-l1"
+  #
+  # layouts/partials/header.nav.html
+  colorHeaderNav                        = "w3-theme-dark"
+  #
+  # layouts/_default/baseof.html
+  colorBaseofCanvas                     = "w3-theme-l4"
+  colorBaseofPanel                      = "w3-theme-l2"
+  #
+  # layouts/partials/front.*.html
+  colorFrontClientsCard                 = "w3-theme-l2"
+  colorFrontClientsContainer            = "w3-theme-l3"
+  colorFrontFeaturesCard                = "w3-theme-l3"
+  colorFrontFeaturesContainer           = "w3-theme-l4"
+  colorFrontJumbotronsContainer         = "w3-theme-l2"
+  colorFrontJumbotronsSection           = "w3-theme-l4"
+  colorFrontPhotocardsCard              = "w3-theme-l1"
+  colorFrontPhotocardsCardContainer     = "w3-theme-l1"
+  colorFrontPhotocardsContainer         = "w3-theme-l3"
+  colorFrontRecentPostsCard             = "w3-theme-l4"
+  colorFrontRecentPostsCardButton       = "w3-theme-l4"
+  colorFrontRecentPostsContainer        = "w3-theme-l3"
+  colorFrontRecentPostsTitleCard        = "w3-theme-l2"
+  colorFrontSeeMoreButton               = "w3-theme-l4"
+  colorFrontSeeMoreContainer            = "w3-theme-l4"
+  colorFrontSeeMoreText                 = "w3-text-white"
+  colorFrontTestimonialsCarouselCard    = "w3-theme-l5"
+  colorFrontTestimonialsContainer       = "w3-theme-l4"
+  colorFrontTestimonialsTitleCard       = "w3-theme-l2"
+  #
+  # layouts/partials/page.nav.cards.html
+  colorPageNavCardsCard                 = "w3-theme-d3"
+  colorPageNavCardsLink                 = "w3-theme-l3"
+  colorPageNavCardsContainer            = "w3-theme-l3"
+  #
+  # layouts/partials/page.nav.breadcrump.html
+  colorPageNavBreadcrumpBar             = "w3-theme-d3"
+  #
+  # layouts/pages/list.html:
+  colorPagesListCard                    = "w3-theme-l3"
+  colorPagesListCell                    = "w3-theme-l4"
+  colorPagesListContainer               = "w3-theme-l4"
+  #
+  # layouts/blog/list.html
+  colorBlogListCard                     = "w3-theme-l3"
+  colorBlogListCell                     = "w3-theme-l4"
+  colorBlogListContainer                = "w3-theme-l4"
+  #
+  # layouts/_default/taxonomy.html
+  colorTaxonomyCard                     = "w3-theme-l3"
+  colorTaxonomyCell                     = "w3-theme-l4"
+  colorTaxonomyContainer                = "w3-theme-l4"
+  #
+  # layouts/partials/main.paginator.bar.html
+  colorPaginatorBar                     = "w3-theme-l1"
+  #
+  # layouts/_default/taxonomy.html
+  colorTaxonomyBar                      = "w3-theme-l1"
+  colorTaxonomyPanel                    = "w3-theme-l2"
+  #
+  #layouts/_default/terms.html:
+  colorTermsPanel                       = "w3-theme-l2"
+  #
+  # layouts/partials/blog.disqus-button.html
+  colorDisqusButton                     = "w3-theme-l3"
+  #
+  # layouts/partials/contact.form.html
+  colorContactFormPanel                 = "w3-theme-d3"
+  #
+  # layouts/partials/contact.map.html
+  colorContactMapCard                   = "w3-theme-l2"
+  colorContactMapPanel                  = "w3-theme-l2"
+  #
+  # layouts/partials/search.google.gcse.html
+  colorSearchGoogleGcseContainer        = "w3-theme-l3"
+  #
+  # layouts/partials/footer.bottom.html
+  colorFooterBottomCell                 = "w3-theme-l3"
+  #
+  # layouts/partials/footer.html
+  colorFooterButton                     = "w3-theme-l4"
+  colorFooterContainer                  = "w3-theme-d5"
+  #
+  # layouts/404.html
+  color404Container                     = "w3-theme-l3"
+  #
+  # layouts/partials/main.related.html
+  colorRelatedBar                       = "w3-theme-l3"
 
-  [params.reward]                                         # 文章打赏
-    enable = false
-    wechat = "/path/to/your/wechat-qr-code.png"           # 微信二维码
-    alipay = "/path/to/your/alipay-qr-code.png"           # 支付宝二维码
 
-  [params.social]                                         # 社交链接
-    a-email = "mailto:skinner.david@gmail.comsubject=Davsk.Net%20Website&body=Dear%20Site%20Developer"
-    b-stack-overflow = "https://stackoverflow.com/users/3886366/david-skinner"
-    c-twitter = "https://twitter.com/SkinnerDavidL"
-    d-facebook = "https://www.facebook.com/david.lynn.skinner"
-    e-linkedin = "https://www.linkedin.com/in/david-skinner-79373646/"
-    f-google = "https://plus.google.com/u/0/+DavidSkinnerDavsk"
-    g-github = "https://github.com/comaldave"
-    h-weibo = "https://www.reddit.com/user/comaldave"
-    i-zhihu = "http://localhost:1313"
-    j-douban = "http://localhost:1313"
-    k-pocket = "http://localhost:1313"
-    l-tumblr = "http://localhost:1313"
-    m-instagram = "http://localhost:1313"
+  # used in layouts/shortcodes/alert.html
+  colorAlertPrimary                     = "w3-purple"
+  colorAlertSecondary                   = "w3-aqua"
+  colorAlertSuccess                     = "w3-light-green"
+  colorAlertInfo                        = "w3-light-blue"
+  colorAlertWarning                     = "w3-yellow"
+  colorAlertDanger                      = "w3-red"
+  colorAlertDark                        = "w3-dark-grey"
+  colorAlertLight                       = "w3-grey"
 
-# 将下面这段配置取消注释可以使 hugo 生成 .md 文件
-# Uncomment these options to make hugo output .md files.
-#[mediaTypes]
-#  [mediaTypes."text/plain"]
-#    suffix = "md"
-#
-#[outputFormats.MarkDown]
-#  mediaType = "text/plain"
-#  isPlainText = true
-#  isHTML = false
-#
-#[outputs]
-#  home = ["HTML", "RSS"]
-#  page = ["HTML", "MarkDown"]
-#  section = ["HTML", "RSS"]
-#  taxonomy = ["HTML", "RSS"]
-#  taxonomyTerm = ["HTML"]
+  # w3-amber
+  # w3-aqua
+  # w3-blue
+  # w3-blue-grey
+  # w3-brown
+  # w3-cyan
+  # w3-dark-grey
+  # w3-deep-orange
+  # w3-deep-purple
+  # w3-green
+  # w3-grey
+  # w3-indigo
+  # w3-khaki
+  # w3-light-blue
+  # w3-light-green
+  # w3-light-grey
+  # w3-lime
+  # w3-orange
+  # w3-pink
+  # w3-purple
+  # w3-red
+  # w3-sand
+  # w3-teal
+  # w3-white
+  # w3-yellow
+
+
+  # google stuff
+  # ##############################
+
+  # used in layouts/partials/head.html
+  # use true for https://themes.gohugo.io/hugo-theme-w3css-basic
+  # if fontsUseGoogleApis=true then choose your fonts in [params.googleApiFonts.family.*]  (see below)
+  fontsUseGoogleApis=true
+
+  # Global Site Tag
+  # https://developers.google.com/gtagjs/
+  # used in layouts/partials/head.google.gtags.html
+  # you need to enter the Tracking-ID above
+  # googleAnalytics = ""
+  enableGoogleGtag=true
+
+  # Google Maps API key
+  # get our own: https://developers.google.com/maps/documentation/javascript/adding-a-google-map#key
+  # used in layouts/partials/contact.map.html
+  # if empty => fallback to URL (instead of map)
+  # define environment variable (=> key is not stored in github)
+  envGoogleMapsApiKey = "GoogleMapsApiKey"
+  # if environment is not an option => define key here:
+  #googleMapsApiKey = ""
+
+  #googleMapsZoom   = 14
+  googleMapsZoom   = 3
+  latitude         = 46.946692
+  longitude        =  7.444186
+
+  # Google Custom Search API
+  # https://cse.google.com/cse/
+  # used in layouts/partials/search.google.gcse.html
+  googleCustomSearchCX = '002931815551392744433:tnypjyusk2e'
+
+  # for google translate check params.menuTopBar.googleTranslate*
+
+
+  # teasers
+  # ##############################
+
+  # https://gohugo.io/functions/truncate/
+  # used in layouts/pages/list.html
+  #         layouts/partials/front.recent_posts.html
+  #         layouts/partials/main.teaser_in_card.html
+  teaserTruncateSummary  = 200
+
+
+  # contact form
+  # ##############################
+
+  # used in partials/contact.form.html
+  # Enable the contact form by entering your Formspree.io email
+  formspree            = "formspree.io"
+  email                = "info@example.com"
+  contactFormInclEmail = true
+
+  # disqus (theme)
+  # ##############################
+
+  # used in partials/blog.disqus-button.html
+  # set to false if you dont want to have a button "show comments", but show the comments right away
+  disqusButtonShow      = false
+  # set to true, if you want to show the count of comments within the "show comments" button
+  # fires an async request to disqus.com/count.js
+  disqusButtonShowCount = false
+  # set to true if you dont want a GDPR agreement with the visitor
+  # disqusSkipAgree = true
+
+  # date format (blog) is created using:
+  #  layouts/partials/main.blog.date.html
+  #  layouts/partials/main.i18n.date.html
+  #  layouts/partials/main.i18n.date.short.html
+  #  and i18n/*.yaml
+
+  # enable output of shortcode hc (html comment)
+  # used in layouts/shortcodes/hc.html
+  enableHC = true
+
+  # flags used for tracing and html comment output
+  # currently used:
+  #   html-comment          enable partials html comment output
+  #   debug-shortcodes      enable all shortcodes debugging output
+  #   debug-shortcode-liti  enable all shortcode liti debugging output
+  #traceFlags       = "html-comment:debug-shortcodes"
+  #traceFlags       = "html-comment:debug-shortcode-res-figure"
+  #traceFlags         = "html-comment:debug-shortcode-res-debug"
+  #traceFlags         = "html-comment:debug-partial-resource-image"
+  traceFlags         = "html-comment"
+
+  # custom css and custom js
+  # this theme comes with the following "empty" files
+  #   static/css/custom.css
+  #   static/js/custom.bottom.js
+  #   static/js/custom.top.js
+  # a project can create these in the project dir in order to overwrite them
+  # https://gohugo.io/themes/customizing/#override-static-files
+
+  # in addition the following arrays may be files with paths or URLS
+  #   custom_css        = [ "css/custom_foo.css", "https://cdnjs.cloudflare.com/ajax/libs/minireset.css/0.0.2/minireset.min.css" ]
+  #   custom_js_top     = [ "js/custom_top_bar.js" ]
+  #   custom_js_bottom  = [ "js/custom_bottom_foo.js", "https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js" ]
+  # used in layouts/partials/head.stylesheets.html
+  # used in layouts/partials/scripts.bottom.html
+  # used in layouts/partials/scripts.top.html
+  custom_css        = [ ]
+  custom_js_top     = [ ]
+  custom_js_bottom  = [ ]
+
+
+  # developer stuff
+  debug              = false
+  uglyURLs           = false
+  uglyUrl            = ".html"
+
+
+# ##################################################
+# theme sections
+# more theme defined params
+
+[params.anchor]
+  # layouts/_default/baseof.html
+  enable = true
+  icon   = "fas fa-anchor"
+  #icon = "fas fa-link"
+
+
+[params.related]
+  # https://gohugo.io/content-management/related/
+  # layouts/partials/main.related.html
+  enable        = true
+  limitTo       = 5
+
+
+[params.cookieconsent]
+  # https://cookieconsent.insites.com/download/
+  # used in layouts/partials/head.cookieconsent.html
+  enable           = true
+  #popupBackground  = "#f33"
+  #popupText        = "#fff"
+  #buttonBackground = "#3f3"
+  #buttonText       = "#000"
+  popupBackground  = "#fff"
+  popupText        = "#444"
+  buttonBackground = "#666"
+  buttonText       = "#fff"
+  #static           = "true"
+  #position         = "bottom"
+  #position         = "top"
+  position         = "bottom-left"
+  #position         = "bottom-right"
+  #position         = "top-left"
+  #position         = "top-right"
+  #theme            = ""
+  theme            = "classic"
+  #theme            = "edgeless"
+  href             = "https://cookiesandyou.com"
+
+
+[params.favicon]
+  # you may want to use https://realfavicongenerator.net to generate your files
+  # used in layouts/partials/head.favicon.html
+  # relURL is applied to path
+  enable                 = false
+  path                   = "/images/favicons"
+  version                = "a_random_value"
+  maskIcon               = "#5bbad5"
+  msapplicationTileColor = "#da532c"
+  themeColor             = "#ffffff"
+
+
+[params.marquee]
+  # used in layouts/partials/header.marquee.html
+  # enable or disable marquee on frontpage
+  enable      = true
+  # marquee text is placed in directory as:
+  file        = ".marquee.md"
+
+  # no longer valid:
+  # marquee  = '''
+  #            '''
+
+
+[params.menuConfig]
+  # used in layouts/partials/header.nav.html
+  # if set => change menu entry on small displays to lowercase maxChars
+  smallDispMenuMaxChars     = 4
+  #smallDispMenuMaxChars     = 2
+  smallDispMenuCollapse     = true
+  #smallDispMenuCollapseIcon = "fas fa-bars"
+  smallDispMenuCollapseIcon = "fas fa-caret-square-down"
+  #smallDispMenuCollapseIcon = "far fa-caret-square-down"
+  #smallDispMenuCollapseIcon = "fab fa-elementor"
+  #smallDispMenuCollapseIcon = "fas fa-align-justify"
+
+[params.menuTopBar]
+  # used in layouts/partials/header.nav.html
+  # enable or disable menu.topbar with social icons (right aligned)
+  socialEnable              = true
+  numOfItemsIfSmallDisplay  = 1
+  numOfItemsIfMediumDisplay = 3
+  numOfItemsIfSmallDisplayCollapsed = 6
+
+  # used in layouts/partials/header.nav.html
+  #         layouts/partials/header.nav.google.translate.html
+  googleTranslateEnable    = true
+  googleTranslateShowOnHome= false
+
+  # used in layouts/partials/header.nav.html
+  #         layouts/partials/header.nav.theme_color_selector.html
+  #         layouts/partials/head.stylesheets.html
+  #         layouts/partials/scripts.bottom.html
+  # This may help you to to select a w3cssColorTheme
+  themeColorSelectorEnable = false
+
+
+[params.jumbotrons]
+  # used in layouts/partials/front.jumbotrons.carousel.html
+  # enable or disable jumbotrons on frontpage
+  # see some examples in 'exampleSite/data/jumbotron'
+  enable   = true
+  #enable   = false
+
+[params.photocards]
+  # used in layouts/partials/front.photocards.html
+  # enable or disable photocards on frontpage
+  # see some examples in 'exampleSite/data/photocards'
+  enable        = true
+  #enable        = false
+  limitTo       = 3
+  #limitTo       = 6
+  animate       = true
+  resImgCmd     = "Resize"
+  resImgCmdOpt  = "300x"
+
+[params.features]
+  # used in layouts/partials/front.features.html
+  # enable or disable features on frontpage
+  # see some examples in 'exampleSite/data/features'
+  enable   = true
+  #enable  = false
+  #limitTo  = 3
+  limitTo  = 6
+  animate  = false
+
+[params.recentPosts]
+  # used in layouts/partials/footer.html
+  footerNumOfPosts = 5
+  enableFooter   = true
+  # used in layouts/partials/front.recent_posts.html
+  enableFront    = true
+  title    = "From our Blog"
+  subtitle = '''
+Pellentesque habitant morbi tristique senectus et netus et malesuada
+fames ac.
+             '''
+
+[params.seeMore]
+  # used in layouts/partials/front.see_more.html
+  # enable or disable see_more on frontpage
+  enable    = true
+ #enable    = false
+  icon      = "far fa-file-code"
+  title     = "Do You want to see More?"
+  linkUrl   = "/pages"
+  linkText  = "consectetuer adipiscing"
+  subtitle  = '''
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+              '''
+
+[params.testimonials]
+  # used in layouts/partials/front.testimonials.carousel.html
+  # enable or disable testimonials on frontpage
+  # see some examples in 'exampleSite/data/testimonials'
+  enable   = true
+  #enable  = false
+  title    = "Testimonials"
+  subtitle = '''
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+labore et dolore magna aliquyam erat, sed diam voluptua.
+             '''
+
+[params.clients]
+  # used in layouts/partials/front.clients.carousel.html
+  # enable or disable clients on frontpage
+  # see some examples in 'exampleSite/data/clients'
+  enable        = true
+  #enable        = false
+  resImgCmd     = "Resize"
+  resImgCmdOpt  = "100x"
+  imgMaxWidth   = "100px"
+  imgMaxHeight  = "100px"
+  title         = "Our Clients"
+  subtitle      = '''
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+**molestie consequat**, vel illum dolore.
+             '''
+
+[params.blog]
+  # used in layouts/blog/list.html
+  title    = "Blog"
+  icon     = "fas fa-rss"
+  subtitle = '''
+ultricies eget, tempor sit amet, ante
+             '''
+
+[params.googleApiFonts.family]
+  # this section is only relevant if fontsUseGoogleApis=true
+
+  # https://www.w3.org/Style/Examples/007/fonts.en.html
+  # the predefined generic font names are:
+  # sans-serif = ""
+  # serif      = ""
+  # monospace  = ""
+  # cursive    = ""
+  # fantasy    = ""
+
+  # used in static/vendor/w3css/4/w3.css
+  #   code,kbd,pre,samp     : monospace
+  #   html,body             : sans-serif
+  #   h1                    : serif
+  #   h1,h2,h3,h4,h5,h6     : sans-serif
+  #   .w3-code,.w3-codespan : Consolas,"courier new"
+
+  # https://www.w3schools.com/tags/ref_byfunc.asp
+  # tagsText        = [ "html", "body" ]
+  # tagsText        = [ "html", "body", "abbr", "address", "article" "aside" "blockquote", "caption", "cite", "dfn", "em", "ins", "main", "mark", "s", "section", "summary", "time" ]
+  # tagsText        = [ "html", "body", "abbr", "address", "blockquote", "cite", "dfn", "em", "ins", "mark", "s", "time" ]
+  tagsText        = [ "html", "body", "time" ]
+  tagsHeading     = [ "h1", "h2", "h3", "h4", "h5", "h6" ]
+  tagsMono        = [ "pre", "code", "kbd", "samp", "data" ]
+
+  # these parameter sections must exist, the others are optional
+  fallbackText    = "html"
+  fallbackHeading = "h1"
+  fallbackMono    = "pre"
+
+[params.googleApiFonts.family.html]
+  # serif, sans-serif or even cursive
+  #sans-serif = "Poppins"
+  sans-serif = "Ubuntu"
+
+[params.googleApiFonts.family.time]
+  # the html tag time using it's own font. shortcodes html-tag*.html may be useful...
+  cursive    = "Creepster"
+
+[params.googleApiFonts.family.h1]
+  # serif, sans-serif or even cursive
+  sans-serif = "Signika"
+  #sans-serif = "Ubuntu"
+  #sans-serif = "Days One"
+
+[params.googleApiFonts.family.pre]
+  # monospace or sans-serif
+  #monospace  = "Cousine"
+  monospace  = "Ubuntu Mono"
+
+  # a random list of google api fonts:
+  # sans-serif = "Capriola"
+  # sans-serif = "Days One"
+  # sans-serif = "Open Sans"
+  # sans-serif = "Oswald"
+  # sans-serif = "Oxygen"
+  # sans-serif = "Paytone One"
+  # sans-serif = "Poppins"
+  # sans-serif = "Quantico"
+  # sans-serif = "Raleway"
+  # sans-serif = "Roboto"
+  # sans-serif = "Ubuntu"
+  #
+  # serif      = "Gabriela"
+  # serif      = "Glegoo"
+  # serif      = "Noticia Text"
+  # serif      = "Roboto Slab"
+  #
+  # monospace  = "Cousine"
+  # monospace  = "Nova Mono"
+  # monospace  = "Oxygen Mono"
+  # monospace  = "Roboto Mono"
+  # monospace  = "Space Mono"     # problem with />
+  # monospace  = "Ubuntu Mono"
+  #
+  # cursive    = "Caesar Dressing"
+  # cursive    = "Carter One"
+  # cursive    = "Courgette"
+  # cursive    = "Creepster"
+  # cursive    = "Nova Slim"
+  # cursive    = "Parisienne"
+  # cursive    = "Patrick Hand"
+  # cursive    = "Rammetto One"
+  # cursive    = "Rochester"
+  # cursive    = "Romanesco"
+
+
+[params.gallery]
+  # used in layouts/shortcodes/heg-gallery.html
+  # showFileExtension = true
+  # humanizeCaption   = false
+
+[params.resources]
+	# used in layouts/partials/resource.image.html
+	# used in layouts/shortcodes/res-figure.html
+	# used in layouts/shortcodes/res-gallery.html
+	defaultResPagePath	= "resources/images"
+
+[params.resFigure]
+	# used in layouts/shortcodes/res-figure.html
+	defaultResPagePath	= "."			 
+	defaultMatch				= "**/*"	 
+	defaultImgCmd				= "Resize"
+	defaultImgCmdOpt		= "300x"
+	defaultImgCaption		= "%%T"
+ 
+[params.resGallery]
+	# used in layouts/shortcodes/res-gallery.html
+	defaultResPagePath	= "resources/images" 
+	defaultMatch				= "**/*"		 
+	defaulImgCmd				= "Resize"	 
+	defaulImgCmdOpt			= "800x"		 
+	defaulThumbCmd			= "Fit"			 
+	defaultThumbCmdOpt	= "120x120"	 
+	defaultCaptionLong	= "%%F"			 
+	defaultCaptionShort = "%%N"			 
+
+  #defaulThumbCmd     = "Resize"       
+  #defaultThumbCmdOpt = "100x100"  
+  #defaulThumbCmd     = "Fill"       
+  #defaultThumbCmdOpt = "120x120"  
+
+[params.options]
+	# used in layouts/partials/main.headline.nav-right.html
+  jsHistoryNav        = true
+  jsHistoryNavForward = false
+  showNavUp           = true
+	# used in layouts/partials/page.nav.breadcrump.html
+  showNavBreadcrump   = true
+  navBreadcrumpTitle  = true
+  navBreadcrumpHome   = false
+
+[params.taxonomies]
+	# used in layouts/partials/main.taxonomy.full.bar.html
+	# fullBarMinItemsTag			= 3
+	# fullBarMinItemsCategory = 3
+
+# ##################################################
+# other sections
+
+
+[blackfriday]
+  hrefTargetBlank = true
+  # extensions = ["noEmptyLineBeforeBlock"]
+  # extensions = ["hardLineBreak"]
+  # https://gohugo.io/getting-started/configuration/#blackfriday-options
+  # https://gohugo.io/getting-started/configuration/#blackfriday-extensions
+  # https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+  # http://commonmark.org/
+  # http://spec.commonmark.org/0.28/
