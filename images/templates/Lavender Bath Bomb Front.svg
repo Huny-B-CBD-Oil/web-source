@@ -15,11 +15,16 @@
    viewBox="0 0 3 3"
    version="1.1"
    id="svg8"
+<<<<<<< HEAD
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="Lavender Bath Bomb Front.svg"
    inkscape:export-filename="C:\Users\skinn\Documents\GitHub\Huny-B-CBD-Oil\web-source\images\labels\Peppermint Bath Bomb Front.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
+=======
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="Lavender Bath Bomb Front.svg">
+>>>>>>> af7594b0b929dc379202acf15ad5209b3a6b5323
   <title
      id="title3715">50 mg CBD Serenity Bath Bombs
  Pepperment &amp; Eucalyptus</title>
@@ -68,18 +73,23 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="4.013889"
+<<<<<<< HEAD
      inkscape:cx="25.162624"
      inkscape:cy="78.685121"
+=======
+     inkscape:cx="-23.113139"
+     inkscape:cy="68.719723"
+>>>>>>> af7594b0b929dc379202acf15ad5209b3a6b5323
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
      inkscape:measure-start="0,0"
      inkscape:measure-end="0,0"
-     inkscape:window-width="1298"
-     inkscape:window-height="745"
-     inkscape:window-x="54"
-     inkscape:window-y="-8"
+     inkscape:window-width="1920"
+     inkscape:window-height="1044"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-text-baseline="true">
     <inkscape:grid
@@ -171,8 +181,13 @@
     <ellipse
        style="fill:#000000;stroke-width:0.02717048"
        id="path3724"
+<<<<<<< HEAD
        cx="1.5211426"
        cy="260.39972"
+=======
+       cx="1.510762"
+       cy="260.41528"
+>>>>>>> af7594b0b929dc379202acf15ad5209b3a6b5323
        rx="1.4390136"
        ry="1.4128599" />
     <text
@@ -210,6 +225,7 @@
    id="tspan856">50 </tspan>mg CBD</tspan> </tspan></text>
     <text
        xml:space="preserve"
+<<<<<<< HEAD
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:0.27777778px;line-height:1.25;font-family:'Alegreya Medium';-inkscape-font-specification:'Alegreya Medium, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#b1871b;fill-opacity:1;stroke:none;stroke-width:0.02083798;"
        x="1.5548455"
        y="260.87848"
@@ -230,6 +246,32 @@
          x="0.89749128"
          y="261.55658"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:0.27777779px;font-family:'Alegreya Sans';-inkscape-font-specification:'Alegreya Sans Bold';fill:#e1af33;fill-opacity:1;stroke-width:0.02083333">6 oz . net wt.</tspan></text>
+=======
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:0.27777779px;line-height:1.25;font-family:'Alegreya Medium';-inkscape-font-specification:'Alegreya Medium, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#b1871b;fill-opacity:1;stroke:none;stroke-width:0.02083798;"
+       x="1.5340796"
+       y="260.89923"
+       id="text3745"
+       transform="scale(0.99977674,1.0002233)"><tspan
+         sodipodi:role="line"
+         id="tspan6672"
+         x="1.5601212"
+         y="260.89923"> Lavender  </tspan><tspan
+         sodipodi:role="line"
+         id="tspan6674"
+         x="1.5340796"
+         y="261.24646">Rosemary</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:0.83333319px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#e1af33;fill-opacity:1;stroke:none;stroke-width:0.02083333"
+       x="0.8923009"
+       y="261.61368"
+       id="text3761"><tspan
+         sodipodi:role="line"
+         id="tspan3759"
+         x="0.8923009"
+         y="261.61368"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:0.27777779px;font-family:'Alegreya Sans';-inkscape-font-specification:'Alegreya Sans Bold';fill:#e1af33;fill-opacity:1;stroke-width:0.02083333">6 oz. net wt.</tspan></text>
+>>>>>>> af7594b0b929dc379202acf15ad5209b3a6b5323
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:0.83333319px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ebcb7a;fill-opacity:1;stroke:none;stroke-width:0.02083333;"
