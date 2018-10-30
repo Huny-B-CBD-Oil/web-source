@@ -68,7 +68,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.0069445"
-     inkscape:cx="115.60057"
+     inkscape:cx="32.638635"
      inkscape:cy="117.83849"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
@@ -76,9 +76,9 @@
      units="in"
      inkscape:measure-start="0,0"
      inkscape:measure-end="0,0"
-     inkscape:window-width="1298"
-     inkscape:window-height="745"
-     inkscape:window-x="54"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:snap-text-baseline="true">
@@ -206,25 +206,15 @@
    id="tspan852">100 mg CBD</tspan> </tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:0.27777779px;line-height:1.25;font-family:'Alegreya Medium';-inkscape-font-specification:'Alegreya Medium, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#b1871b;fill-opacity:1;stroke:none;stroke-width:0.02083798"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:0.36111111px;line-height:1.25;font-family:'Alegreya Medium';-inkscape-font-specification:'Alegreya Medium, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#b1871b;fill-opacity:1;stroke:none;stroke-width:0.02083798;"
        x="2.4756174"
        y="260.50583"
        id="text3745"
        transform="scale(0.99977674,1.0002233)"><tspan
          sodipodi:role="line"
-         id="tspan416"
-         x="2.4756174"
-         y="260.50583"
-         style="font-size:0.5px">Lavender</tspan><tspan
+         id="tspan37">Lavender</tspan><tspan
          sodipodi:role="line"
-         id="tspan418"
-         x="2.4756174"
-         y="260.85306"
-         style="font-size:0.5px">Rosemary</tspan><tspan
-         sodipodi:role="line"
-         id="tspan420"
-         x="2.4756174"
-         y="261.20029" /></text>
+         id="tspan39">Bergamont</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:0.83333319px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#e1af33;fill-opacity:1;stroke:none;stroke-width:0.02083333"
