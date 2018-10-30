@@ -62,7 +62,7 @@ pygmentsUseClasses            = true
 
 
 # Enable Google Analytics by entering your tracking code
-#googleAnalytics = "UA-113314068-2"
+googleAnalytics = "UA-128206672-1"
 
 
 # RSS Feed
@@ -120,9 +120,9 @@ anchor = "smart"
 
 [[menu.main]]
   weight = 2
-  name   = "Contact"
-  url    = "/contact"
-  pre    = "far fa-address-card"
+  name   = "Blog"
+  url    = "/blog"
+  pre    = "fas fa-rss"
 
 [[menu.main]]
   weight = 3
@@ -130,12 +130,18 @@ anchor = "smart"
   url    = "/pages"
   pre    = "fas fa-list"
 
-# demo submenu
 [[menu.main]]
   weight = 4
-  name   = "Theme"
+  name   = "Products"
+  url    = "/catalog"
+  pre    = "fas fa-list"
+
+# demo submenu
+[[menu.main]]
+  weight = 9
+  name   = "Help"
   pre    = "fas fa-info-circle"
-  identifier = "theme"
+  identifier = "help"
 
 [[menu.main]]
   weight = 1
@@ -143,32 +149,34 @@ anchor = "smart"
   #url    = "/categories/this-theme/"
   url    = "/pages/hugo-theme-w3css-basic/"
   pre    = "fas fa-info fa-fw"
-  parent = "theme"
+  parent = "help"
 
 [[menu.main]]
   weight = 2
-  name   = "Images"
-  url    = "/pages/hugo-theme-w3css-basic/images-taken-from/"
-  pre    = "far fa-images fa-fw"
-  parent = "theme"
+  name   = "Contact"
+  url    = "/contact"
+  pre    = "far fa-address-card"
+  parent = "help"
 
 [[menu.main]]
   weight = 3
-  name   = "Showcase"
+  name   = "Images"
+  url    = "/pages/hugo-theme-w3css-basic/images-taken-from/"
+  pre    = "far fa-images fa-fw"
+  parent = "help"
+
+[[menu.main]]
+  weight = 4
+  name   = "Attributions"
   url    = "/pages/showcase/"
   pre    = "fas fa-eye fa-fw"
-  parent = "theme"
+  parent = "help"
 
 # end submenu
 
-[[menu.main]]
-  weight = 5
-  name   = "Blog"
-  url    = "/blog"
-  pre    = "fas fa-rss"
 
 [[menu.main]]
-  weight = 6
+  weight = 8
   name   = "FAQ"
   url    = "/faq"
   pre    = "far fa-question-circle"
@@ -187,17 +195,17 @@ anchor = "smart"
 #  url      = "https://gitlab.com/it-gro"
 #  pre      = "fab fa-gitlab"
 
-#[[menu.topbar]]
-#  weight   = 3
-#  name     = "Facebook"
-#  url      = "http://facebook.com"
-#  pre      = "fab fa-facebook"
+[[menu.topbar]]
+  weight   = 3
+  name     = "Facebook"
+  url      = "https://fb.me/HunyBcbd"
+  pre      = "fab fa-facebook"
 
-#[[menu.topbar]]
-#  weight   = 4
-#  name     = "Twitter"
-#  url      = "http://twitter.com"
-#  pre      = "fab fa-twitter"
+[[menu.topbar]]
+  weight   = 4
+  name     = "Twitter"
+  url      = "http://twitter.com/HunyBcbd"
+  pre      = "fab fa-twitter"
 
 [[menu.topbar]]
   weight   = 5
@@ -234,9 +242,11 @@ anchor = "smart"
   aboutUs   = '''
 We manufacture natural personal care products in Delight, Arkansas, USA
 
-* Some of our products contain CBD Oil Isolates
-* Some of our products contain Full Spectrum Hemp Oil
-
+* All of our products contain
+  * CBD Isolates derived from the Hemp plant
+  * Hemp Seed Oil
+  * Essential Oils
+  * Other natural ingredients
 **Educate Yourself!** Which products will be most beneficial for you and legal in your area.
               '''
 
@@ -249,7 +259,7 @@ Arkadelphia  AR   71923 <br>
   footerContactButton = "contact/index.md"
 
   # used in layouts/partials/footer.bottom.html
-  bottomLeft  = "Copyright (c) 2018, *Huny-B CBD-Oil Ltd Co*"
+  bottomLeft  = "Copyright (c) 2018, *Huny-B CBD-Oil Ltd Co*. All Rights Reserved."
   bottomRight = 'created by Davsk.Net'
 
 
@@ -287,12 +297,12 @@ Arkadelphia  AR   71923 <br>
 
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2006-sand-dollar.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2007-chili-pepper.css"
-  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2008-blue-izis.css"
+  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2008-blue-izis.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2009-mimosa.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2010-turquise.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2011-honeysucle.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2012-tangerine-tango.css"
-  w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2013-emerald.css"
+  #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2013-emerald.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2014-radiand-orchid.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2015-marsala.css"
   #w3cssColorTheme = "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-airy-blue.css"
@@ -483,7 +493,7 @@ Arkadelphia  AR   71923 <br>
   # Google Custom Search API
   # https://cse.google.com/cse/
   # used in layouts/partials/search.google.gcse.html
-  # googleCustomSearchCX = '002931815551392744433:tnypjyusk2e'
+  googleCustomSearchCX = '013312786026196333548:rxn_jv0gbhg'
 
   # for google translate check params.menuTopBar.googleTranslate*
 
@@ -504,7 +514,7 @@ Arkadelphia  AR   71923 <br>
   # used in partials/contact.form.html
   # Enable the contact form by entering your Formspree.io email
   formspree            = "formspree.io"
-  email                = "info@example.com"
+  email                = "info@cbd-oil.app"
   contactFormInclEmail = true
 
   # disqus (theme)
@@ -556,7 +566,7 @@ Arkadelphia  AR   71923 <br>
   # used in layouts/partials/scripts.bottom.html
   # used in layouts/partials/scripts.top.html
   custom_css        = [ ]
-  custom_js_top     = [ ]
+  custom_js_top     = ["https://cdn.pagesense.io/js/hunybcbdoil/6aaef43d348d4f57a1750f6da26e7feb.js"]
   custom_js_bottom  = [ ]
 
 
@@ -588,14 +598,14 @@ Arkadelphia  AR   71923 <br>
   # https://cookieconsent.insites.com/download/
   # used in layouts/partials/head.cookieconsent.html
   enable           = true
-  #popupBackground  = "#f33"
-  #popupText        = "#fff"
-  #buttonBackground = "#3f3"
-  #buttonText       = "#000"
-  popupBackground  = "#fff"
-  popupText        = "#444"
-  buttonBackground = "#666"
-  buttonText       = "#fff"
+  popupBackground  = "#f33"
+  popupText        = "#fff"
+  buttonBackground = "#3f3"
+  buttonText       = "#000"
+  #popupBackground  = "#fff"
+  #popupText        = "#444"
+  #buttonBackground = "#666"
+  #buttonText       = "#fff"
   #static           = "true"
   #position         = "bottom"
   #position         = "top"
@@ -604,8 +614,8 @@ Arkadelphia  AR   71923 <br>
   #position         = "top-left"
   #position         = "top-right"
   #theme            = ""
-  theme            = "classic"
-  #theme            = "edgeless"
+  #theme            = "classic"
+  theme            = "edgeless"
   href             = "https://cookiesandyou.com"
 
 
@@ -656,14 +666,14 @@ Arkadelphia  AR   71923 <br>
   # used in layouts/partials/header.nav.html
   #         layouts/partials/header.nav.google.translate.html
   googleTranslateEnable    = true
-  googleTranslateShowOnHome= true
+  googleTranslateShowOnHome= false
 
   # used in layouts/partials/header.nav.html
   #         layouts/partials/header.nav.theme_color_selector.html
   #         layouts/partials/head.stylesheets.html
   #         layouts/partials/scripts.bottom.html
   # This may help you to to select a w3cssColorTheme
-  themeColorSelectorEnable = true
+  themeColorSelectorEnable = false
 
 
 [params.jumbotrons]
@@ -671,14 +681,14 @@ Arkadelphia  AR   71923 <br>
   # enable or disable jumbotrons on frontpage
   # see some examples in 'exampleSite/data/jumbotron'
   #enable   = true
-  enable   = false
+  enable   = true
 
 [params.photocards]
   # used in layouts/partials/front.photocards.html
   # enable or disable photocards on frontpage
   # see some examples in 'exampleSite/data/photocards'
   #enable        = true
-  enable        = false
+  enable        = true
   limitTo       = 3
   #limitTo       = 6
   animate       = true
@@ -690,7 +700,7 @@ Arkadelphia  AR   71923 <br>
   # enable or disable features on frontpage
   # see some examples in 'exampleSite/data/features'
   #enable   = true
-  enable  = false
+  enable  = true
   #limitTo  = 3
   limitTo  = 6
   animate  = false
@@ -701,9 +711,9 @@ Arkadelphia  AR   71923 <br>
   enableFooter   = true
   # used in layouts/partials/front.recent_posts.html
   enableFront    = true
-  title    = "From our Blog"
+  title    = "From our company office"
   subtitle = '''
-Educate Yourself! Health benefits of CBD Oil Isoalate and Broad Spectrum Hemp Oil.
+Educate Yourself! Health benefits of CBD Isolate and Hemp Seed Oil.
              '''
 
 [params.seeMore]
@@ -716,15 +726,15 @@ Educate Yourself! Health benefits of CBD Oil Isoalate and Broad Spectrum Hemp Oi
   linkUrl   = "/pages"
   linkText  = "Product Information"
   subtitle  = '''
-Educate Yourself! Health benefits of CBD Oil Isoalate and Broad Spectrum Hemp Oil.
+Educate Yourself! Health benefits of CBD Isolate and Hemp Seed Oil.
               '''
 
 [params.testimonials]
   # used in layouts/partials/front.testimonials.carousel.html
   # enable or disable testimonials on frontpage
   # see some examples in 'exampleSite/data/testimonials'
-  #enable   = true
-  enable  = false
+  enable   = true
+  # enable  = false
   title    = "Testimonials"
   subtitle = '''
 Not everyone will acheive the same effects. But read our Clients testimonials.
@@ -734,8 +744,8 @@ Not everyone will acheive the same effects. But read our Clients testimonials.
   # used in layouts/partials/front.clients.carousel.html
   # enable or disable clients on frontpage
   # see some examples in 'exampleSite/data/clients'
-  # enable        = true
-  enable        = false
+  enable        = true
+  # enable        = false
   resImgCmd     = "Resize"
   resImgCmdOpt  = "100x"
   imgMaxWidth   = "100px"
@@ -773,72 +783,40 @@ Latest research, news release, and product info.
 
   # https://www.w3schools.com/tags/ref_byfunc.asp
   # tagsText        = [ "html", "body" ]
-  # tagsText        = [ "html", "body", "abbr", "address", "article" "aside" "blockquote", "caption", "cite", "dfn", "em", "ins", "main", "mark", "s", "section", "summary", "time" ]
+  tagsText        = [ "html", "body", "abbr", "address", "article", "aside", "blockquote", "caption", "cite", "dfn", "em", "ins", "main", "mark", "s", "section", "summary", "time" ]
   # tagsText        = [ "html", "body", "abbr", "address", "blockquote", "cite", "dfn", "em", "ins", "mark", "s", "time" ]
-  tagsText        = [ "html", "body", "time" ]
+  # tagsText        = [ "html", "body", "time" ]
   tagsHeading     = [ "h1", "h2", "h3", "h4", "h5", "h6" ]
   tagsMono        = [ "pre", "code", "kbd", "samp", "data" ]
 
   # these parameter sections must exist, the others are optional
   fallbackText    = "html"
-  fallbackHeading = "h1"
+  fallbackHeading = "h3"
   fallbackMono    = "pre"
 
 [params.googleApiFonts.family.html]
-  # serif, sans-serif or even cursive
-  #sans-serif = "Poppins"
-  sans-serif = "Ubuntu"
+  serif = "Alegreya"
+
+[params.googleApiFonts.family.em]
+  serif = "Alegreya SC"
 
 [params.googleApiFonts.family.time]
-  # the html tag time using it's own font. shortcodes html-tag*.html may be useful...
-  cursive    = "Creepster"
+  cursive    = "Euphoria Script"
 
 [params.googleApiFonts.family.h1]
-  # serif, sans-serif or even cursive
-  sans-serif = "Signika"
-  #sans-serif = "Ubuntu"
-  #sans-serif = "Days One"
+  cursive = "Oleo Script:800"
+
+[params.googleApiFonts.family.h2]
+  cursive = "Oleo Script:400"
+
+[params.googleApiFonts.family.h3]
+  sans-serif = "Alegreya Sans"
+
+[params.googleApiFonts.family.script]
+  cursive = "Euphoria Script"
 
 [params.googleApiFonts.family.pre]
-  # monospace or sans-serif
-  #monospace  = "Cousine"
-  monospace  = "Ubuntu Mono"
-
-  # a random list of google api fonts:
-  # sans-serif = "Capriola"
-  # sans-serif = "Days One"
-  # sans-serif = "Open Sans"
-  # sans-serif = "Oswald"
-  # sans-serif = "Oxygen"
-  # sans-serif = "Paytone One"
-  # sans-serif = "Poppins"
-  # sans-serif = "Quantico"
-  # sans-serif = "Raleway"
-  # sans-serif = "Roboto"
-  # sans-serif = "Ubuntu"
-  #
-  # serif      = "Gabriela"
-  # serif      = "Glegoo"
-  # serif      = "Noticia Text"
-  # serif      = "Roboto Slab"
-  #
-  # monospace  = "Cousine"
-  # monospace  = "Nova Mono"
-  # monospace  = "Oxygen Mono"
-  # monospace  = "Roboto Mono"
-  # monospace  = "Space Mono"     # problem with />
-  # monospace  = "Ubuntu Mono"
-  #
-  # cursive    = "Caesar Dressing"
-  # cursive    = "Carter One"
-  # cursive    = "Courgette"
-  # cursive    = "Creepster"
-  # cursive    = "Nova Slim"
-  # cursive    = "Parisienne"
-  # cursive    = "Patrick Hand"
-  # cursive    = "Rammetto One"
-  # cursive    = "Rochester"
-  # cursive    = "Romanesco"
+  monospace  = "Overpass Mono:600"
 
 
 [params.gallery]
@@ -888,8 +866,12 @@ Latest research, news release, and product info.
 
 [params.taxonomies]
 	# used in layouts/partials/main.taxonomy.full.bar.html
-	# fullBarMinItemsTag			= 3
-	# fullBarMinItemsCategory = 3
+	concern = "concerns"
+	ingredient = "ingredients"
+	product = "products"
+	report = "reports"
+	fullBarMinItemsTag			= 3
+	fullBarMinItemsCategory = 3
 
 # ##################################################
 # other sections

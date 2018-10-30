@@ -1,9 +1,9 @@
 #!/bin/sh
 
-echo "\033[0;32mDeploying Huny-B.CBD-Oil.App updates to GitHub...\033[0m"
+echo -e "\033[0;32mDeploying Huny-B.CBD-Oil.App updates to GitHub...\033[0m"
 
 # Build the project.
-hugo -t davsk-hugo-theme
+hugo -t hugo-theme-w3css-basic
 
 # Go To Public folder
 cd public
