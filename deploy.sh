@@ -3,7 +3,7 @@
 echo -e "\033[0;32mDeploying Huny-B.CBD-Oil.App updates to GitHub...\033[0m"
 
 # Build the project.
-hugo -t hugo-theme-w3css-basic
+hugo -t hugo-theme-w3css-basic --stepAnalysis
 
 # Go To Public folder
 cd public
