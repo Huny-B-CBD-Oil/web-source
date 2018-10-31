@@ -483,12 +483,12 @@ Arkadelphia  AR   71923 <br>
   # define environment variable (=> key is not stored in github)
   envGoogleMapsApiKey = "GoogleMapsApiKey"
   # if environment is not an option => define key here:
-  #googleMapsApiKey = ""
+  googleMapsApiKey = "AIzaSyBeLh8gnKu2uF-ybH8iEqkl3_WVaUWtqMo"
 
   #googleMapsZoom   = 14
   googleMapsZoom   = 3
-  latitude         = 46.946692
-  longitude        =  7.444186
+  latitude         = 34.117522
+  longitude        = 98.052816
 
   # Google Custom Search API
   # https://cse.google.com/cse/
@@ -689,7 +689,7 @@ Arkadelphia  AR   71923 <br>
   # see some examples in 'exampleSite/data/photocards'
   #enable        = true
   enable        = true
-  limitTo       = 3
+  limitTo       = 6
   #limitTo       = 6
   animate       = true
   resImgCmd     = "Resize"
@@ -750,9 +750,9 @@ Not everyone will acheive the same effects. But read our Clients testimonials.
   resImgCmdOpt  = "100x"
   imgMaxWidth   = "100px"
   imgMaxHeight  = "100px"
-  title         = "Our Clients"
+  title         = "Our Individual Product Testers"
   subtitle      = '''
-We make no claims, we let our Clients speak about our products.
+We make no claims, we let our customers speak about our products.
              '''
 
 [params.blog]
@@ -870,6 +870,8 @@ Latest research, news release, and product info.
 	ingredient = "ingredients"
 	product = "products"
 	report = "reports"
+	tag = "tags"
+	category = "categories"
 	fullBarMinItemsTag			= 3
 	fullBarMinItemsCategory = 3
 
