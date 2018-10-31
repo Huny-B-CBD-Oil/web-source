@@ -623,12 +623,12 @@ Arkadelphia  AR   71923 <br>
   # you may want to use https://realfavicongenerator.net to generate your files
   # used in layouts/partials/head.favicon.html
   # relURL is applied to path
-  enable                 = false
+  enable                 = true
   path                   = "/images/favicons"
   version                = "v1.0.0"
-  maskIcon               = "#5bbad5"
+  maskIcon               = "#e1af33"
   msapplicationTileColor = "#da532c"
-  themeColor             = "#ffffff"
+  themeColor             = "#663399"
 
 
 [params.marquee]
