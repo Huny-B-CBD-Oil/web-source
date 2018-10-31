@@ -101,7 +101,11 @@ anchor = "smart"
 [taxonomies]
   tag      = "tags"
   category = "categories"
-
+  concern = "concerns"
+  ingredient = "ingredients"
+  product = "products"
+  report = "reports"
+	
 [Permalinks]
   blog = "/blog/:year/:month/:day/:filename/"
   # blog = "/blog/:year/:month/:title/"
