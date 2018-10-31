@@ -514,7 +514,7 @@ Arkadelphia  AR   71923 <br>
   # used in partials/contact.form.html
   # Enable the contact form by entering your Formspree.io email
   formspree            = "formspree.io"
-  email                = "info@cbd-oil.app"
+  email                = "cashier@cbd-oil.app"
   contactFormInclEmail = true
 
   # disqus (theme)
