@@ -492,7 +492,7 @@ Arkadelphia  AR   71923 <br>
   #googleMapsZoom   = 14
   googleMapsZoom   = 3
   latitude         = 34.117522
-  longitude        = 98.052816
+  longitude        = -98.052816
 
   # Google Custom Search API
   # https://cse.google.com/cse/
@@ -808,10 +808,10 @@ Latest research, news release, and product info.
   cursive    = "Euphoria Script"
 
 [params.googleApiFonts.family.h1]
-  cursive = "Oleo Script:800"
+  cursive = "Alegreya Sans"
 
 [params.googleApiFonts.family.h2]
-  cursive = "Oleo Script:400"
+  cursive = "Alegreya Sans"
 
 [params.googleApiFonts.family.h3]
   sans-serif = "Alegreya Sans"
